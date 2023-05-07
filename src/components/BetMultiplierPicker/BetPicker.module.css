@@ -1,0 +1,46 @@
+.container {
+  align-self: center;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.multiplier_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+.multiplier {
+  font-size: 14px;
+  width: 40px;
+  font-weight: bold;
+  background-color: purple;
+  color: white;
+  border-radius: 5px;
+}
+.clicked {
+  background-color: rgb(35, 219, 35);
+}
+.multiplier:hover {
+  cursor: pointer;
+}
+.credit {
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .multiplier_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
