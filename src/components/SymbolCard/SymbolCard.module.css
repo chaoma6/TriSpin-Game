@@ -1,0 +1,40 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: purple;
+	overflow: hidden;
+	min-width: 100px;
+	min-height: 100px;
+}
+
+.img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+.img_winning {
+	animation: winning 1.2s 2 linear;
+}
+.winning {
+	background-color: black;
+	animation: animateBg 0.4s infinite linear;
+	background: center top;
+	background-size: cover;
+}
+
+@keyframes winning {
+	0% {
+		transform: rotate(0deg);
+	}
+	70% {
+		transform: rotate(360deg);
+	}
+
+	90% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
