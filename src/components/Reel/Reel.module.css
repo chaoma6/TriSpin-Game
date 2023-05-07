@@ -1,0 +1,15 @@
+.main {
+  width: 102px;
+  height: 300px;
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 90px;
+    height: 300px;
+  }
+}
