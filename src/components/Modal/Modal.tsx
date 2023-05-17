@@ -4,36 +4,36 @@ import lines from '../../assets/lines/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
 const { firstLine, secondLine, thirdLine, fourthLine, fifthLine } = lines;
-const { banana, berries, plum, hat, crown, diamond } = collection;
+const { symbol1, symbol2, symbol3, symbol4, symbol5, symbol6 } = collection;
 const data = [
 	{
-		name: 'plum',
-		img: plum,
+		name: 'J',
+		img: symbol1,
 		multiplier: 4,
 	},
 	{
-		name: 'banana',
-		img: banana,
+		name: 'Q',
+		img: symbol2,
 		multiplier: 4,
 	},
 	{
-		name: 'berries',
-		img: berries,
+		name: 'K',
+		img: symbol3,
 		multiplier: 4,
 	},
 	{
 		name: 'hat',
-		img: hat,
+		img: symbol4,
 		multiplier: 20,
 	},
 	{
-		name: 'crown',
-		img: crown,
+		name: 'diamond',
+		img: symbol5,
 		multiplier: 50,
 	},
 	{
-		name: 'diamond',
-		img: diamond,
+		name: 'Car',
+		img: symbol6,
 		multiplier: 100,
 	},
 ];

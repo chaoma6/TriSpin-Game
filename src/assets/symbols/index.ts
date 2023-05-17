@@ -1,15 +1,15 @@
-import banana from './banana.png';
-import berries from './berries.png';
-import crown from './crown.png';
-import diamond from './diamond.png';
-import hat from './hat.png';
-import plum from './plum.png';
+import symbol1 from './symbol1.png';
+import symbol2 from './symbol2.png';
+import symbol3 from './symbol3.png';
+import symbol4 from './symbol4.png';
+import symbol5 from './symbol5.png';
+import symbol6 from './symbol6.png';
 
 export default {
-	banana,
-	berries,
-	crown,
-	diamond,
-	hat,
-	plum,
+	symbol1,
+	symbol2,
+	symbol3,
+	symbol4,
+	symbol5,
+	symbol6,
 };

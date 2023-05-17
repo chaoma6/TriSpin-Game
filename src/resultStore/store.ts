@@ -5,30 +5,30 @@ import {
 	generateWinningOutcome,
 } from './outcomeGenerators/generators';
 
-const { banana, plum, berries, hat, crown, diamond } = collection;
+const { symbol1, symbol2, symbol3, symbol4, symbol5, symbol6 } = collection;
 export const symbols_data = generateInitilaState(
-	banana,
-	plum,
-	berries,
-	hat,
-	crown,
-	diamond
+	symbol1,
+	symbol2,
+	symbol3,
+	symbol4,
+	symbol5,
+	symbol6
 );
-//plum,banana,berries,hat,crown,diamond
+
 export const loosingOutcome = generateLoosingOutcomes(
-	plum,
-	banana,
-	berries,
-	hat,
-	crown,
-	diamond
+	symbol1,
+	symbol2,
+	symbol3,
+	symbol4,
+	symbol5,
+	symbol6
 );
 
 export const winningOutcome = generateWinningOutcome(
-	plum,
-	banana,
-	berries,
-	hat,
-	crown,
-	diamond
+	symbol1,
+	symbol2,
+	symbol3,
+	symbol4,
+	symbol5,
+	symbol6
 );
