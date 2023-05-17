@@ -1,6 +1,6 @@
 import classes from './App.module.css';
 import Reel from './components/Reel/Reel';
-import { useMemo, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -13,6 +13,12 @@ import BetPicker from './components/BetMultiplierPicker/BetMultiplierPicker';
 import oddsGenerator from './utils/oddsGenerator';
 import shuffleArray from './utils/shuffle';
 import InfoModal from './components/Modal/Modal';
+
+interface SpinOutcome {
+	combination: string[][];
+	winningLine: number[];
+	payout: number;
+}
 
 function App() {
 	const [reelOneSymbols, setReelOneSymbols] = useState(shuffleArray([...symbols_data]));
@@ -41,15 +47,11 @@ function App() {
 	const betHandler = (bet: number) => {
 		setBet(bet);
 	};
+
 	const startFirstReel = (
 		playerWin: boolean,
 		loosingIndex: number,
-
-		outcome: {
-			combination: string[][];
-			winningLine: number[];
-			payout: number;
-		}
+		outcome: SpinOutcome
 	) => {
 		setReelOneSpinning(true);
 		setPayoutMessage('Good luck!');
@@ -72,17 +74,13 @@ function App() {
 			}, 1000);
 		}
 	};
+
 	const startSecondReel = (
 		playerWin: boolean,
 		loosingIndex: number,
-		outcome: {
-			combination: string[][];
-			winningLine: number[];
-			payout: number;
-		}
+		outcome: SpinOutcome
 	) => {
 		setReelTwoSpinning(true);
-
 		setReelTwoSymbols(shuffleArray([...symbols_data]));
 		if (playerWin) {
 			setTimeout(() => {
@@ -97,7 +95,6 @@ function App() {
 				setReelTwoSymbols(loosingOutcome[loosingIndex].combination[1]);
 				setReelTwoWinningLine(loosingOutcome[loosingIndex].winningLine);
 				setReelTwoPayout(loosingOutcome[loosingIndex].payout);
-
 				setReelTwoSpinning(false);
 			}, 1500);
 		}
@@ -106,12 +103,7 @@ function App() {
 	const startThirdReel = (
 		playerWin: boolean,
 		loosingIndex: number,
-
-		outcome: {
-			combination: string[][];
-			winningLine: number[];
-			payout: number;
-		}
+		outcome: SpinOutcome
 	) => {
 		setReelThreeSpinning(true);
 		setReelThreeSymbols(shuffleArray([...symbols_data]));
@@ -142,6 +134,7 @@ function App() {
 			}, 2000);
 		}
 	};
+
 	const onStartHandler = () => {
 		if (credits < bet) {
 			setInsufficientCredits(true);
@@ -152,14 +145,14 @@ function App() {
 		}
 		setStartClicked(true);
 		setCredits((curr) => curr - bet);
-		setWinningClass(false);
+		setWinningClass(false); //clear the old state before new game
 		const { playerWin, loosingOutcomeIndex, outcome } = oddsGenerator();
 		startFirstReel(playerWin, loosingOutcomeIndex, outcome);
 		startSecondReel(playerWin, loosingOutcomeIndex, outcome);
 		startThirdReel(playerWin, loosingOutcomeIndex, outcome);
 	};
 
-	useMemo(() => {
+	useEffect(() => {
 		if (reelThreeSpinning) {
 			setBtnDisabled(true);
 		} else {
