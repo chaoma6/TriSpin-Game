@@ -1,12 +1,10 @@
+import { generateInitialState } from './outcomeGenerators/generateInitialState';
+import { generateWinningOutcomes } from './outcomeGenerators/generateWinningOutcomes';
 import collection from '../assets/symbols/index';
-import {
-	generateInitilaState,
-	generateLoosingOutcomes,
-	generateWinningOutcome,
-} from './outcomeGenerators/generators';
+import { generateLosingOutcomes } from './outcomeGenerators/generateLosingOutcomes';
 
 const { symbol1, symbol2, symbol3, symbol4, symbol5, symbol6 } = collection;
-export const symbols_data = generateInitilaState(
+export const symbols_data = generateInitialState(
 	symbol1,
 	symbol2,
 	symbol3,
@@ -15,7 +13,7 @@ export const symbols_data = generateInitilaState(
 	symbol6
 );
 
-export const loosingOutcome = generateLoosingOutcomes(
+export const loosingOutcome = generateLosingOutcomes(
 	symbol1,
 	symbol2,
 	symbol3,
@@ -24,7 +22,7 @@ export const loosingOutcome = generateLoosingOutcomes(
 	symbol6
 );
 
-export const winningOutcome = generateWinningOutcome(
+export const winningOutcome = generateWinningOutcomes(
 	symbol1,
 	symbol2,
 	symbol3,
