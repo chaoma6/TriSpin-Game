@@ -1,4 +1,4 @@
-import { winningOutcome, loosingOutcome } from '../resultStore/store';
+import { winningOutcome, loosingOutcome } from '../store/store';
 /* 
 oddsGenerator 函数生成一个介于 0 和 3000 之间的随机数（winOdd），用于确定获胜的概率。
 变量 playerWin、loosingOutcomeIndex、winningOutcomeIndex 和 outcome 被初始化为默认值。

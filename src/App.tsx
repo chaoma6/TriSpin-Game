@@ -8,7 +8,7 @@ import {
 	faTriangleExclamation,
 	faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
-import { loosingOutcome, symbols_data } from './resultStore/store';
+import { loosingOutcome, symbols_data } from './store/store';
 import BetPicker from './components/BetMultiplierPicker/BetMultiplierPicker';
 import oddsGenerator from './utils/oddsGenerator';
 import shuffleArray from './utils/shuffle';
