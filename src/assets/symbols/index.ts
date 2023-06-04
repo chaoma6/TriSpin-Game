@@ -6,12 +6,12 @@ import symbol5 from './symbol5.png';
 import symbol6 from './symbol6.png';
 
 const symbols = {
-	symbol1,
-	symbol2,
-	symbol3,
-	symbol4,
-	symbol5,
-	symbol6,
+  symbol1,
+  symbol2,
+  symbol3,
+  symbol4,
+  symbol5,
+  symbol6,
 };
 
 export default symbols;

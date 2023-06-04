@@ -5,11 +5,11 @@ import fourthLine from './fourthLine.png';
 import fifthLine from './fifthLine.png';
 
 const lineImages = {
-	firstLine,
-	secondLine,
-	thirdLine,
-	fourthLine,
-	fifthLine,
+  firstLine,
+  secondLine,
+  thirdLine,
+  fourthLine,
+  fifthLine,
 };
 
 export default lineImages;
