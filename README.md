@@ -1,11 +1,15 @@
 
-# Max Slot Game
+# TriSpin-Game 
 
-Max Slot Game is a web-based slot game built with React and TypeScript. It offers an engaging and entertaining slot gaming experience with its responsive design, visually appealing animations, and exciting gameplay.
+TriSpin Game is a mobile-friendly 3x3 reel slot game built with React and TypeScript. It offers an engaging and entertaining slot gaming experience with its responsive design, visually appealing animations, and exciting gameplay.
 
 ## Features
 
-- 3x3 Reel Responsive Slot Game: Play a thrilling 3x3 slot game with a modern and responsive user interface.
+- **Outcome Generators:** Utilize outcome generators and utility functions such as shuffle and oddsGenerator to ensure a fair and entertaining gameplay experience.
+- **Bet Picker Function:** Allow users to select different bet amounts through the Bet Picker function, enhancing the customization of the gameplay.
+- **Credit Display Functionality:** Integrate credit display functionality to track the user's current credit balance.
+- **Visually Appealing Animations:** Design visually appealing animations and styles using Framer Motion, enhancing the overall user experience.
+- **Info Modal and Notifications:** Enhance the user experience by providing helpful messages and instructions throughout the game, including displaying winning combinations and the corresponding amounts won.
 
 ## game logic
 1. Press the spin button.
@@ -26,3 +30,12 @@ Max Slot Game is a web-based slot game built with React and TypeScript. It offer
 10. Calculate the total payout based on the winning lines and payouts of each reel.
 11. Update the interface to display the total payout.
 12. Reset the game to its initial state and wait for the next spin button press.
+
+## Next Steps
+
+1. Add additional paylines to increase the excitement and potential winning combinations.
+2. Introduce bonus rounds or special symbols to provide extra gameplay features.
+3. Implement sound effects and background music to enhance the immersive experience.
+4. Include a leaderboard to track high scores and create a competitive element.
+7. Add social sharing functionality to allow players to share their achievements with friends.
+8. Conduct thorough testing and optimize the game for different devices and browsers.
