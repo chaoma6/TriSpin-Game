@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { useMemo, useState } from 'react';
+
 import classes from './SymbolCard.module.css';
 
 interface SymbolCardProps {
@@ -21,9 +22,7 @@ const SymbolCard: React.FC<SymbolCardProps> = ({
   useMemo(() => {
     const updateClasses = () => {
       setContainerClass(
-        `${classes.container} ${winMark ? classes.winning : ''} ${
-          classes.spin
-        }`,
+        `${classes.container} ${winMark ? classes.winning : ''} ${classes.spin}`
       );
       setImgClass(`${classes.img} ${winMark ? classes.img_winning : ''}`);
     };
@@ -48,7 +47,7 @@ const SymbolCard: React.FC<SymbolCardProps> = ({
       }
       className={containerClass}
     >
-      <img src={symbolPath} alt="symbol" className={imgClass} />
+      <img src={symbolPath} alt='symbol' className={imgClass} />
     </motion.div>
   );
 };

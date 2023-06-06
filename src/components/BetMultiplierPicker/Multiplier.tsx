@@ -1,3 +1,5 @@
+import React from 'react';
+
 import classes from './BetPicker.module.css';
 
 interface MultiplierProps {
@@ -18,7 +20,7 @@ const Multiplier: React.FC<MultiplierProps> = ({
   };
 
   return (
-    <button type="button" className={btnClass} onClick={handleClick}>
+    <button type='button' className={btnClass} onClick={handleClick}>
       {name}
     </button>
   );

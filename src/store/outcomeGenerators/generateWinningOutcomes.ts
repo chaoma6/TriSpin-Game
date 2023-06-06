@@ -10,7 +10,7 @@ const generateWinningOutcomes = (
   symb3: string,
   symb4: string,
   symb5: string,
-  symb6: string,
+  symb6: string
 ): Outcome[] => [
   {
     combination: [

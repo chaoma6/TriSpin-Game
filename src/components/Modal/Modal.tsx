@@ -1,9 +1,10 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
-import classes from './InfoModal.module.css';
-import collection from '../../assets/symbols/index';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+
 import lines from '../../assets/lines/index';
+import collection from '../../assets/symbols/index';
+import classes from './InfoModal.module.css';
 
 const { firstLine, secondLine, thirdLine, fourthLine, fifthLine } = lines;
 const { symbol1, symbol2, symbol3, symbol4, symbol5, symbol6 } = collection;
@@ -48,8 +49,8 @@ const InfoModal: React.FC<{
       className={classes.backdrop}
       onClick={() => setShowInfo(false)}
       onKeyDown={() => setShowInfo(false)}
-      type="button"
-      aria-label="Close"
+      type='button'
+      aria-label='Close'
     />
     <div className={classes.main}>
       <div className={classes.main_body}>
@@ -57,6 +58,7 @@ const InfoModal: React.FC<{
           <p className={classes.headline}>Payouts</p>
           <div className={classes.paytable_container}>
             {data.map((symbol, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <div className={classes.card_symbol} key={index}>
                 <img
                   src={symbol.img}
@@ -83,11 +85,11 @@ const InfoModal: React.FC<{
         <div className={classes.right_side}>
           <p className={classes.headline}>Winning lines</p>
           <div className={classes.lines_container}>
-            <img src={firstLine} alt="winning line" className={classes.line} />
-            <img src={secondLine} alt="winning line" className={classes.line} />
-            <img src={thirdLine} alt="winning line" className={classes.line} />
-            <img src={fourthLine} alt="winning line" className={classes.line} />
-            <img src={fifthLine} alt="winning line" className={classes.line} />
+            <img src={firstLine} alt='winning line' className={classes.line} />
+            <img src={secondLine} alt='winning line' className={classes.line} />
+            <img src={thirdLine} alt='winning line' className={classes.line} />
+            <img src={fourthLine} alt='winning line' className={classes.line} />
+            <img src={fifthLine} alt='winning line' className={classes.line} />
           </div>
         </div>
       </div>
@@ -95,7 +97,7 @@ const InfoModal: React.FC<{
         <FontAwesomeIcon
           icon={faLeftLong}
           className={classes.back_icon}
-          size="2x"
+          size='2x'
           onClick={() => setShowInfo(false)}
         />
       </div>

@@ -1,18 +1,21 @@
+import React from 'react';
+
 import SymbolCard from '../SymbolCard/SymbolCard';
 import classes from './Reel.module.css';
 
 interface ReelProps {
-  // 转轴是否正在旋转
+  // Whether the reel is spinning or not
   reelSpinning: boolean;
-  // 转轴上的符号数组
+  // Array of symbols on the reel
   symbols: string[];
-  // 转轴的位置（左、中、右）
+  // Position of the reel (left, center, right)
   reelOrder: number;
-  // 中奖的线路编号
+  // Winning line number
   winningLine: number[];
-  // 中奖金额
+  // Payout amount
+  // eslint-disable-next-line react/no-unused-prop-types
   payout: number;
-  // 是否为中奖状态
+  // Whether it is a winning state
   winningClass: boolean;
 }
 
@@ -23,32 +26,32 @@ const Reel: React.FC<ReelProps> = ({
   winningLine,
   winningClass,
 }) => {
-  // 存储每个符号是否中奖的标志
+  // Store the flags for each symbol indicating if it's a winning symbol
   const winMark = [false, false, false];
 
-  // 如果中奖线路中包含1，则第1个符号中奖
+  // If winning line includes 1, first symbol is a winning symbol
   if (winningLine.includes(1)) {
     winMark.splice(0, 0, true);
   }
 
-  // 如果中奖线路中包含2，则第2个符号中奖
+  // If winning line includes 2, second symbol is a winning symbol
   if (winningLine.includes(2)) {
     winMark.splice(1, 0, true);
   }
 
-  // 如果中奖线路中包含3，则第3个符号中奖
+  // If winning line includes 3, third symbol is a winning symbol
   if (winningLine.includes(3)) {
     winMark.splice(2, 0, true);
   }
 
-  // 如果中奖线路中包含4，则左起第1个符号中奖
+  // If winning line includes 4, first symbol from the left is a winning symbol
   if (winningLine.includes(4)) {
     if (reelOrder === 0) winMark.splice(0, 1, true);
     if (reelOrder === 1) winMark.splice(1, 1, true);
     if (reelOrder === 2) winMark.splice(2, 1, true);
   }
 
-  // 如果中奖线路中包含5，则右起第1个符号中奖
+  // If winning line includes 5, first symbol from the right is a winning symbol
   if (winningLine.includes(5)) {
     if (reelOrder === 0) winMark.splice(2, 1, true);
     if (reelOrder === 1) winMark.splice(1, 1, true);
@@ -57,12 +60,12 @@ const Reel: React.FC<ReelProps> = ({
 
   return (
     <div className={classes.main}>
-      {/* 遍历符号数组，渲染每个符号卡片 */}
+      {/* Map through the symbols array and render each symbol card */}
       {symbols.map((symbol, i) => (
         <SymbolCard
           symbolPath={symbol}
           spinning={reelSpinning}
-          key={Math.random() * 100} // 使用随机数作为 key，不推荐
+          key={Math.random() * 100} // Using random number as key, not recommended
           winMark={winMark[i]}
           winningClass={winningClass}
         />
@@ -72,3 +75,4 @@ const Reel: React.FC<ReelProps> = ({
 };
 
 export default Reel;
+// 'payout' PropType is defined but prop is never usedeslintreact/no-unused-prop-types

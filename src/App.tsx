@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faCircleInfo,
   faRotate,
   faTriangleExclamation,
-  faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
-import Reel from './components/Reel/Reel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from 'react';
+
 import classes from './App.module.css';
-import { loosingOutcome, symbolsData } from './store/store';
 import BetPicker from './components/BetMultiplierPicker/BetMultiplierPicker';
+import InfoModal from './components/Modal/Modal';
+import Reel from './components/Reel/Reel';
+import { loosingOutcome, symbolsData } from './store/store';
 import oddsGenerator from './utils/oddsGenerator';
 import shuffleArray from './utils/shuffle';
-import InfoModal from './components/Modal/Modal';
 
 interface SpinOutcome {
   combination: string[][];
@@ -22,13 +22,13 @@ interface SpinOutcome {
 
 function App() {
   const [reelOneSymbols, setReelOneSymbols] = useState(
-    shuffleArray([...symbolsData]),
+    shuffleArray([...symbolsData])
   );
   const [reelTwoSymbols, setReelTwoSymbols] = useState(
-    shuffleArray([...symbolsData]),
+    shuffleArray([...symbolsData])
   );
   const [reelThreeSymbols, setReelThreeSymbols] = useState(
-    shuffleArray([...symbolsData]),
+    shuffleArray([...symbolsData])
   );
   const [reelOneWinningLine, setReelOneWinningLine] = useState([0]);
   const [reelTwoWinningLine, setReelTwoWinningLine] = useState([0]);
@@ -55,7 +55,7 @@ function App() {
   const startFirstReel = (
     playerWin: boolean,
     loosingIndex: number,
-    outcome: SpinOutcome,
+    outcome: SpinOutcome
   ) => {
     setReelOneSpinning(true);
     setPayoutMessage('Good luck!');
@@ -82,7 +82,7 @@ function App() {
   const startSecondReel = (
     playerWin: boolean,
     loosingIndex: number,
-    outcome: SpinOutcome,
+    outcome: SpinOutcome
   ) => {
     setReelTwoSpinning(true);
     setReelTwoSymbols(shuffleArray([...symbolsData]));
@@ -107,7 +107,7 @@ function App() {
   const startThirdReel = (
     playerWin: boolean,
     loosingIndex: number,
-    outcome: SpinOutcome,
+    outcome: SpinOutcome
   ) => {
     setReelThreeSpinning(true);
     setReelThreeSymbols(shuffleArray([...symbolsData]));
@@ -225,7 +225,7 @@ function App() {
           <div className={classes.actions}>
             <BetPicker betHandler={betHandler} bet={selectedBet} />
             <button
-              type="button"
+              type='button'
               className={classes.btn_start}
               onClick={onStartHandler}
               disabled={btnDisabled}
@@ -235,7 +235,7 @@ function App() {
                 className={
                   startClicked ? classes.icon_spin_active : classes.icon_spin
                 }
-                size="5x"
+                size='5x'
               />
             </button>
             <div className={classes.credits_container}>

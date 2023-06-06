@@ -4,7 +4,7 @@ const generateInitialState = (
   symb3: string,
   symb4: string,
   symb5: string,
-  symb6: string,
+  symb6: string
 ): string[] => [
   symb1,
   symb1,

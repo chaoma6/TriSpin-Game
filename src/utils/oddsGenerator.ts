@@ -1,4 +1,4 @@
-import { winningOutcome, loosingOutcome } from '../store/store';
+import { loosingOutcome, winningOutcome } from '../store/store';
 
 interface Outcome {
   combination: string[][];
@@ -21,7 +21,7 @@ const generateRandomIndex = (array: any[]): number =>
 // Function to retrieve a random outcome with the specified payout from the given array of outcomes
 const getRandomOutcome = (outcomes: Outcome[], payout: number): Outcome => {
   const filteredOutcomes = outcomes.filter(
-    (item: Outcome) => item.payout === payout,
+    (item: Outcome) => item.payout === payout
   );
   const index = generateRandomIndex(filteredOutcomes);
   return filteredOutcomes[index];
@@ -57,18 +57,18 @@ const oddsGenerator = (): OddsGeneratorResult => {
     playerWin = true;
     outcome = getRandomOutcome(
       winningOutcome.filter(
-        (item: Outcome) => item.payout >= 12 && item.payout <= 20,
+        (item: Outcome) => item.payout >= 12 && item.payout <= 20
       ),
-      12,
+      12
     );
   } else if (winOdd >= 901 && winOdd <= 950) {
     // If the winOdd falls within the range of 901-950, player wins with a payout between 20 and 40
     playerWin = true;
     outcome = getRandomOutcome(
       winningOutcome.filter(
-        (item: Outcome) => item.payout > 20 && item.payout <= 40,
+        (item: Outcome) => item.payout > 20 && item.payout <= 40
       ),
-      20,
+      20
     );
   } else if (winOdd >= 951 && winOdd <= 980) {
     // If the winOdd falls within the range of 951-980, player wins with a payout of 50
